@@ -13,7 +13,10 @@
   <body>
     <%= render "shared/header"%>
     <div class="container">
-      <%= yield %>
+      <div class="row m-3">
+        <%= render 'shared/flash' %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
