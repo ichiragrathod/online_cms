@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
+  resources :complaints
   root 'home#index'
 end

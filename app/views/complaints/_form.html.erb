@@ -1,0 +1,41 @@
+<%= render 'shared/errors', obj:@complaint %>
+<%= form_with(model:@complaint, local: true, data: { turbo: false }) do |f| %>
+  <div class="mb-3">
+    <%= f.label :name, class:"form-label"%><br />
+    <%= f.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :landmark, class:"form-label"%><br />
+    <%= f.text_field :landmark, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :address, class:"form-label"%><br />
+    <%= f.text_field :address, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :city, class:"form-label"%><br />
+    <%= f.text_field :city, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :complaint, class:"form-label"%><br />
+    <%= f.text_field :complaint, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :complaint_type, class:"form-label"%><br />
+    <%= f.select :complaint_type, Complaint.complaint_types.keys, class:"form-select"  %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :complaint_level, class:"form-label"%><br />
+    <%= f.select :complaint_level, Complaint.complaint_levels.keys, class:"form-select" %>
+  </div>
+  
+  <div class="mb-3">
+    <%= f.submit class:"btn btn-primary"%>
+  </div>
+<% end %>
