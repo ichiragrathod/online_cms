@@ -34,6 +34,11 @@
     <%= f.label :complaint_level, class:"form-label"%><br />
     <%= f.select :complaint_level, Complaint.complaint_levels.keys, class:"form-select" %>
   </div>
+
+  <div class="mb-3">
+    <%= f.label :image, class:"form-label"%><br />
+    <%= f.file_field :image, class:"form-control" %>
+  </div>
   
   <div class="mb-3">
     <%= f.submit class:"btn btn-primary"%>

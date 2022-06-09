@@ -1,13 +1,14 @@
 <div class="m-3">
   <h3>Complaint Status</h3>
 
-  <h4><b>Name : </b> <span> <%=@complaint.name%> </span></h4>  <br/>
+  <h4><b>Persion Name : </b> <span> <%=@complaint.name%> </span></h4>  <br/>
+  <h4><b>Complaint : </b> <span> <%=@complaint.complaint%> </span></h4>  <br/>
   <h4><b>Status : </b> <span><%=@complaint.complaint_status%></span> </h4>  <br/>
-  <h4><b>Complaint Image : </b> <img src="" width="200" height="200"> </h4> <br/>
+  <h4><b>Complaint Image : </b> <%= image_tag(@complaint.image, size:"400x300") if @complaint.image.attached?%> </h4> <br/>
 
   <div>
       <h4><b>Reason : </b><span><%=@complaint.reason%></span></h4>  <br/>
       <h4><b>Solutions : </b> <span><%=@complaint.solution%></span></h4>  <br/>
-      <h4><b>Complaint Proof : </b> <img src="" width="200" height="200"> </h4> <br/>
+      <h4><b>Complaint Proof : </b>  </h4> <br/>
   </div>
 </div>
