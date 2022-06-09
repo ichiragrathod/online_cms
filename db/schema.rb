@@ -18,8 +18,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_092851) do
     t.string "address"
     t.string "city"
     t.string "complaint"
+    t.string "reason"
+    t.string "solution"
     t.integer "complaint_type"
     t.integer "complaint_level"
+    t.integer "complaint_status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_complaints_on_user_id"

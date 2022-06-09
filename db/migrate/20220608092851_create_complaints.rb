@@ -7,8 +7,11 @@ class CreateComplaints < ActiveRecord::Migration[7.0]
       t.string :address 
       t.string :city 
       t.string :complaint
+      t.string :reason
+      t.string :solution 
       t.integer :complaint_type  
       t.integer :complaint_level 
+      t.integer :complaint_status, default: 0  
       t.timestamps
     end
   end
