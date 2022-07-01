@@ -3,7 +3,7 @@ class ComplaintsController < ApplicationController
   before_action :authenticate_user!, :require_user
   
   def index
-    @complaints = Complaint.all
+    @complaints = Complaint.where(user_id:current_user.id)
   end
   
   def new
