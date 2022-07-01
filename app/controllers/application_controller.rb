@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
     devise_parameter_sanitizer.permit(:account_update, keys: attributes)
   end
+
+  def require_user
+    if current_user.admin?
+      flash[:alert] = "You must be logged in as user to perform that action"
+      redirect_to new_user_session_path
+    end
+  end
 end

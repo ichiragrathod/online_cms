@@ -1,6 +1,6 @@
 class ComplaintsController < ApplicationController
   before_action :set_complaint, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :require_user
   
   def index
     @complaints = Complaint.all
@@ -10,7 +10,7 @@ class ComplaintsController < ApplicationController
     @complaint = Complaint.new
   end
   
-  def create
+  def create 
     @complaint = Complaint.new(complaint_params)
     @complaint.user = current_user
     if @complaint.save
@@ -49,5 +49,4 @@ class ComplaintsController < ApplicationController
     def complaint_params  
       params.require(:complaint).permit(:name, :landmark, :address, :city, :complaint, :complaint_type, :complaint_level, :image, :user_id)
     end
-  
 end

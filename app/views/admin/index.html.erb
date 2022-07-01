@@ -1,0 +1,17 @@
+<div class="text-danger m-3 text-center">
+    <h2>Adminstrator</h2>
+</div>
+<br>
+<div>       
+  <div class="row">
+    <div class="col-sm m-3 text-center">
+      <%= image_tag 'dashboard/complaint.png', class:"img-fluid", height:"75px", width:"75px"%>
+      <h4><%= link_to 'All Complaints', admin_complaints_path %></h4>
+    </div>
+
+    <div class="col-sm m-3 text-center">
+       <%= image_tag 'dashboard/user.png', class:"img-fluid", height:"75px", width:"90px"%>
+       <h4><%= link_to 'All Users', admin_users_path %></h4>
+    </div>
+  </div> 
+</div>
