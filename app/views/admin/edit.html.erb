@@ -1,0 +1,23 @@
+<div class="text-success m-3 text-center">
+  <h2>Update Complaint</h2>
+</div>
+
+<%= form_with model: @complaint, url: complaint_update_path, method: :patch do |f| %>
+  
+  <div class="mb-3">
+    <%= f.label :status, class:"form-label"%><br>
+    <%= f.select :complaint_status, Complaint.complaint_statuses.keys, class:"form-select" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :reason, class:"form-label"%><br>
+    <%= f.text_field :reason, class:"form-control" %><br>
+  </div>  
+
+  <div class="mb-3">
+    <%= f.label :solution, class:"form-label"%><br>
+    <%= f.text_field :solution, class:"form-control" %><br>
+  </div>
+
+  <%= f.submit "Update Complaint", class:"btn btn-primary"%>
+<% end %>

@@ -1,2 +1,35 @@
-<h1>Admin#complaints</h1>
-<p>Find me in app/views/admin/complaints.html.erb</p>
+<div class="text-danger m-3 text-center">
+  <h2>All Complaints</h2>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Landmark</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Complaint</th>
+      <th>Complaint Type</th>
+      <th>Complaint Level</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @complaints.each do |complaint| %>
+      <tr>
+        <td><%= complaint.id%> </td>
+        <td><%= complaint.name%></td>
+        <td><%= complaint.landmark%></td> 
+        <td><%= complaint.address%></td> 
+        <td><%= complaint.city%> </td>
+        <td><%= complaint.complaint%></td>
+        <td><%= complaint.complaint_type%></td> 
+        <td><%= complaint.complaint_level%></td> 
+        <td><%= link_to 'Show Status',admin_complaint_path(complaint.id), class:"btn btn-outline-primary"%></td>
+      </tr>
+    <% end %>   
+  </tbody>
+</table>
+

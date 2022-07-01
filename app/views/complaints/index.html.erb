@@ -1,6 +1,6 @@
 <h1> All Your Complaints</h1>
 <br>
-<table class="table table-striped">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>ID</th>
@@ -26,9 +26,10 @@
         <td><%= complaint.complaint%></td>
         <td><%= complaint.complaint_type%></td> 
         <td><%= complaint.complaint_level%></td> 
-        <td><%= link_to 'Show Status',complaint_path(complaint.id)%></td>
-        <td><%= button_to 'Delete', complaint_path(complaint.id),method: :delete, data: { confirm: "Are you sure to delete this complaint?" }  %> </td>
+        <td><%= link_to 'Show Status',complaint_path(complaint.id), class:"btn btn-outline-primary"%></td>
+        <td><%= button_to 'Delete', complaint_path(complaint.id), class:"btn btn-outline-danger", method: :delete, data: { confirm: "Are you sure to delete this complaint?" }  %> </td>
       </tr>
     <% end %>   
   </tbody>
 </table>
+
