@@ -23,6 +23,13 @@ class AdminController < ApplicationController
   end
 
   def users
+    @users = User.where(role:'user')
+  end
+
+  def destroy_user
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to user_path
   end
 
   private

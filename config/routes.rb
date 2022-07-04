@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
+  delete 'users/:id', to: 'admin#destroy_user', as: 'destroy_user'
   resources :complaints
   resources :users, only: [:show]
   root 'home#index'

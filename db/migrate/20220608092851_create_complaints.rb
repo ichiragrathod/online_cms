@@ -1,5 +1,5 @@
 class CreateComplaints < ActiveRecord::Migration[7.0]
-  def change
+  def up
     create_table :complaints do |t|
       t.references :user, null: false, foreign_key: true
       t.string :name 
@@ -15,4 +15,7 @@ class CreateComplaints < ActiveRecord::Migration[7.0]
       t.timestamps
     end
   end
+  def down 
+  end
+  
 end
