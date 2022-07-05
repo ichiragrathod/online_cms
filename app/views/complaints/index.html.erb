@@ -1,35 +1,43 @@
-<h1> All Your Complaints</h1>
 <br>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Landmark</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>Complaint</th>
-      <th>Complaint Type</th>
-      <th>Complaint Level</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @complaints.each do |complaint| %>
+<% if (@complaints.count)>0 %>
+  <div class="text-danger m-3 text-center">
+    <h1> All Your Complaints</h1>
+  </div>
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= complaint.id%> </td>
-        <td><%= complaint.name%></td>
-        <td><%= complaint.landmark%></td> 
-        <td><%= complaint.address%></td> 
-        <td><%= complaint.city%> </td>
-        <td><%= complaint.complaint%></td>
-        <td><%= complaint.complaint_type%></td> 
-        <td><%= complaint.complaint_level%></td> 
-        <td><%= link_to 'Show Status',complaint_path(complaint.id), class:"btn btn-outline-primary"%></td>
-        <td><%= button_to 'Delete', complaint_path(complaint.id), class:"btn btn-outline-danger", method: :delete, data: { confirm: "Are you sure to delete this complaint?" }  %> </td>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Landmark</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Complaint</th>
+        <th>Complaint Type</th>
+        <th>Complaint Level</th>
+        <th>Action</th>
       </tr>
-    <% end %>   
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @complaints.each do |complaint| %>
+        <tr>
+          <td><%= complaint.id%> </td>
+          <td><%= complaint.name%></td>
+          <td><%= complaint.landmark%></td> 
+          <td><%= complaint.address%></td> 
+          <td><%= complaint.city%> </td>
+          <td><%= complaint.complaint%></td>
+          <td><%= complaint.complaint_type%></td> 
+          <td><%= complaint.complaint_level%></td> 
+          <td><%= link_to 'Show Status',complaint_path(complaint.id), class:"btn btn-outline-primary"%></td>
+          <td><%= button_to 'Delete', complaint_path(complaint.id), class:"btn btn-outline-danger", method: :delete, data: { confirm: "Are you sure to delete this complaint?" }  %> </td>
+        </tr>
+      <% end %>   
+    </tbody>
+  </table>
+<% else %>
+  <div class="text-danger m-3 text-center">
+    <h3> You don't have any complaints yet.</h3>
+  </div>
+<% end %>
 

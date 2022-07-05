@@ -1,7 +1,6 @@
 <div class="text-success m-3">
     <h5>Login as: <%= current_user.email %></h5>
-    <h5>Name: <%= current_user.name %></h5>
-    
+    <h5>Name: <%= current_user.name %></h5>  
 </div>
 <br>
 <div>       
@@ -12,13 +11,13 @@
     </div>
 
     <div class="col-sm m-3 text-center">
-       <%= image_tag 'dashboard/complaint_list.png', class:"img-fluid", height:"75px", width:"90px"%>
-       <h4><%= link_to 'All Complaints', complaints_path %></h4>
+      <%= image_tag 'dashboard/complaint_list.png', class:"img-fluid", height:"75px", width:"90px"%>
+      <h4><%= link_to 'All Complaints', complaints_path %></h4>
     </div>
 
     <div class="col-sm m-3 text-center">
       <%= image_tag 'dashboard/user.png', class:"img-fluid", height:"75px", width:"75px"%>
-       <h4>My Profile</h4>
+      <h4>My Profile</h4>
     </div>
   </div> 
 </div>

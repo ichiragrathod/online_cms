@@ -4,7 +4,7 @@ class AdminController < ApplicationController
   end
 
   def complaints
-    @complaints = Complaint.all
+    @complaints = Complaint.all 
   end
 
   def edit
