@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   }
   delete 'users/:id', to: 'admin#destroy_user', as: 'destroy_user'
   resources :complaints
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit]
   root 'home#index'
 end
